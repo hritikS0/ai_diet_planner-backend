@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nodemon server.js",
+  "type": "module",
+ "scripts": {
+  "start": "node server.js",
+  "build": "cd ../frontend && npm install && npm run build"
+}
+,
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@paxsenix/ai": "^0.1.5",
+    "axios": "^1.13.2",
+    "bcryptjs": "^3.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.20.0",
+    "node-fetch": "^3.3.2",
+    "openai": "^6.9.1"
+  }
+}
