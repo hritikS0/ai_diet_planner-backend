@@ -13,13 +13,18 @@ const PORT = process.env.PORT || 5001;
 // middleware
 app.use(express.json());
 app.use(cors());
-
+app.get("/health",(req,res)=>{
+  res.send("health check")  
+})
 // routes
 app.use("/api/auth", authRoutes);
 app.use("/api/diet", dietRoutes);
+
 //db connection
 connectDb().then(() => {
   app.listen(PORT, () => {
     console.log(`Server Started running on PORT :${PORT}`);
   });
+}).catch((err) => {
+  console.error("Database connection failed:", err);
 });

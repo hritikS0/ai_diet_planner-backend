@@ -33,10 +33,10 @@ export const userLogin = async (req, res) => {
     }
 
     const user = await User.findOne({ email });
-    if (!user) res.status(404).json({ message: "user not found" });
+    if (!user) return res.status(404).json({ message: "user not found" });
 
     const isMatch = await bycrpt.compare(password, user.password);
-    if (!isMatch) res.status(400).json({ message: "Passsword did not match" });
+    if (!isMatch) return res.status(400).json({ message: "Passsword did not match" });
 
     const token = generateToken(user._id);
 
